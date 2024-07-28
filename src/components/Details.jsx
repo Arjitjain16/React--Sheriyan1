@@ -12,11 +12,11 @@ const Details = () => {
       setproduct(data)
     } catch (error) {
       console.log( error);
-    }
+    } 
   }
   useEffect(() => {
     geetingsingleproduct()
-  }, [id])
+  },[])
   return product? (
     <div className="h-[100vh] flex gap-14 w-[70%]  m-auto  justify-center py-[10%] ">
      <div>

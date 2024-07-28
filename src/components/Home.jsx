@@ -1,15 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useContext } from "react";
 import { ProductContext } from "./utils/Context";
 import Loading from "./utils/Laoding";
+import axios from "axios";
 
 function Home() {
   const [products] = useContext(ProductContext);
+  const {search} = useLocation()
 
-  if (!products) return <Loading />;
+  const category = decodeURIComponent(search.split("=")[1])
 
-  return (
+  // const getproductcategory = asyn () =>{
+  //   try {
+  //   } catch (error) {
+      
+  //   }
+  // }
+
+
+  return products? (
     <div className="h-screen w-screen flex">
       <Navbar />
       <div className="w-[85%] h-[100vh] flex flex-wrap gap-4 py-20 px-6">
@@ -31,6 +41,8 @@ function Home() {
         ))}
       </div>
     </div>
+  ) :(
+    <Loading />
   );
 }
 
