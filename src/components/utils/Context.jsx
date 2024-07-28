@@ -3,7 +3,7 @@ import axios from "./axios"
 
 
 export const ProductContext = createContext()
-const Context = ({children}) => {
+const Context = (props) => {
     const [product, setproduct] = useState(null)
 
     const getproducts = async () =>{
@@ -18,11 +18,11 @@ const Context = ({children}) => {
     
     useEffect(()=>{
         getproducts()
-    })
+    },[])
 
    return (
     <ProductContext.Provider value={[product, setproduct]}>
-        <div>{children}</div>
+        <div>{props.children}</div>
     </ProductContext.Provider>
     )
 }
