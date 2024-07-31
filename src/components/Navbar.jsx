@@ -20,7 +20,7 @@ function Navbar() {
       <div className="mt-5">
         <h1 className="mb-3 text-2xl">Category Filter</h1>
         {distinct_category.map((c, i) => (
-          <Link key={i} to={`/category/${c}`}> 
+          <Link key={i} to={`/?category=${c}`}> 
             <div className="flex flex-row items-center gap-2 mb-3">
               <span style={{
                 backgroundColor : color()

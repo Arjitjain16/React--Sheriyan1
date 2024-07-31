@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "./utils/axios"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import Laoding from "./utils/Laoding"
 
 const Details = () => {
